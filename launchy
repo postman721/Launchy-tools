@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
-#Launchy-QT v.1 Copyright (c) 2017 JJ Posti <techtimejourney.net> 
+#Launchy-QT v.1.5 Copyright (c) 2017 JJ Posti <techtimejourney.net> 
 #This is a Panell application.The program comes with ABSOLUTELY NO WARRANTY; 
 #for details see: http://www.gnu.org/copyleft/gpl.html. 
 #This is free software, and you are welcome to redistribute it under 
@@ -8,7 +8,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
-import os, sys, subprocess, time
+import os, sys, subprocess
 from subprocess import Popen 
 
 try:
@@ -26,11 +26,10 @@ except AttributeError:
         return QApplication.translate(context, text, disambig)
 
 class Ui_Form(object):
-    
-    
+        
 #Home function
     def home(self,widget):
-        subprocess.Popen(['python', '/usr/share/sfm.py'])
+        subprocess.Popen(['python', '/usr/share/Clfm/clfm.py'])
 
 #Terminal function
     def term(self,widget):
@@ -38,7 +37,7 @@ class Ui_Form(object):
 
 #web function
     def web(self,widget):
-        subprocess.Popen(['python', '/usr/share/run.py'])
+        subprocess.Popen(['python', '/usr/share/Runit/run.py'])
 
 #Media function
     def media(self,widget):
@@ -51,7 +50,6 @@ class Ui_Form(object):
 #Apt-Gui function
     def agui(self,widget):
         subprocess.Popen(['gksudo' , 'synaptic']) 
-
     
 #Power function
     def power(self,widget):
@@ -59,6 +57,7 @@ class Ui_Form(object):
     
     def setupUi(self, Form):
         Form.setObjectName(_fromUtf8("Form"))
+        Form.setStyleSheet("color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;")
         Form.resize(500, 60)
         Form.setMinimumSize(QtCore.QSize(500, 60))
         Form.setMaximumSize(QtCore.QSize(500, 60))
@@ -68,19 +67,21 @@ class Ui_Form(object):
         self.horizontalLayout = QHBoxLayout(Form)
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
         self.Home = QPushButton(Form)
+        self.Home.setStyleSheet("QPushButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        "QPushButton:hover{background-color:#1b486a;}")  
         self.Home.setText(_fromUtf8(""))
         icon = QIcon()
         icon.addPixmap(QPixmap(_fromUtf8(":/icons/folder_home.png")), QIcon.Normal, QIcon.Off)
-        
         self.Home.setIcon(icon)
         self.Home.setIconSize(QtCore.QSize(32, 32))
         self.Home.setObjectName(_fromUtf8("Home"))
         self.horizontalLayout.addWidget(self.Home)
         self.Home.clicked.connect(self.home)
-
         
         self.Terminal = QPushButton(Form)
         self.Terminal.setText(_fromUtf8(""))
+        self.Terminal.setStyleSheet("QPushButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        "QPushButton:hover{background-color:#1b486a;}")  
         icon1 = QIcon()
         icon1.addPixmap(QPixmap(_fromUtf8(":/icons/gnome-eterm.png")), QIcon.Normal, QIcon.Off)
         self.Terminal.setIcon(icon1)
@@ -95,12 +96,16 @@ class Ui_Form(object):
         icon2.addPixmap(QPixmap(_fromUtf8(":/icons/internet-web-browser.png")), QIcon.Normal, QIcon.Off)
         self.Web.setIcon(icon2)
         self.Web.setIconSize(QtCore.QSize(32, 32))
+        self.Web.setStyleSheet("QPushButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        "QPushButton:hover{background-color:#1b486a;}")  
         self.Web.setObjectName(_fromUtf8("Web"))
         self.horizontalLayout.addWidget(self.Web)
         self.Web.clicked.connect(self.web)
         
         self.Albix = QPushButton(Form)
         self.Albix.setText(_fromUtf8(""))
+        self.Albix.setStyleSheet("QPushButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        "QPushButton:hover{background-color:#1b486a;}")  
         icon3 = QIcon()
         icon3.addPixmap(QPixmap(_fromUtf8(":/icons/albix.png")), QIcon.Normal, QIcon.Off)
         self.Albix.setIcon(icon3)
@@ -111,6 +116,8 @@ class Ui_Form(object):
 
         self.Vol2x = QPushButton(Form)
         self.Vol2x.setText(_fromUtf8(""))
+        self.Vol2x.setStyleSheet("QPushButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        "QPushButton:hover{background-color:#1b486a;}")  
         icon4 = QIcon()
         icon4.addPixmap(QPixmap(_fromUtf8(":/icons/gnome-volume-control.png")), QIcon.Normal, QIcon.Off)
         self.Vol2x.setIcon(icon4)
@@ -120,6 +127,8 @@ class Ui_Form(object):
         self.Vol2x.clicked.connect(self.vol)
         
         self.Apt = QPushButton(Form)
+        self.Apt.setStyleSheet("QPushButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        "QPushButton:hover{background-color:#1b486a;}")  
         self.Apt.setMaximumSize(QtCore.QSize(16777215, 34))
         self.Apt.setText(_fromUtf8(""))
         icon5 = QIcon()
@@ -132,6 +141,8 @@ class Ui_Form(object):
         
         self.Power = QPushButton(Form)
         self.Power.setText(_fromUtf8(""))
+        self.Power.setStyleSheet("QPushButton{color:#ffffff; background-color:#353535; border: 2px solid #353535; border-radius: 3px;font-size: 12px;}"
+        "QPushButton:hover{background-color:#1b486a;}")  
         icon6 = QIcon()
         icon6.addPixmap(QPixmap(_fromUtf8(":/icons/boot.png")), QIcon.Normal, QIcon.Off)
         self.Power.setIcon(icon6)
@@ -139,7 +150,6 @@ class Ui_Form(object):
         self.Power.setObjectName(_fromUtf8("Power"))
         self.horizontalLayout.addWidget(self.Power)
         self.Power.clicked.connect(self.power)
-
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
