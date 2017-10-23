@@ -2,7 +2,7 @@
 Launchy panel and associated tools(Pyqt5)
 
 
-![launchy](https://user-images.githubusercontent.com/29865797/28211941-db13ff86-68a7-11e7-8c1a-889d3e2dfa17.jpg)
+![launchynew](https://user-images.githubusercontent.com/29865797/31877051-afb550c6-b7dd-11e7-8613-0b6180018bb0.jpg)
 
 ![media_launcher](https://user-images.githubusercontent.com/29865797/28211946-ddce9d08-68a7-11e7-8c01-62df60f665d6.jpg)
 
